@@ -4,7 +4,7 @@
     <title>everyday</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
@@ -75,18 +75,22 @@
             width:40%;
             height: 35%;
         }
+
+        .navbar-custom{
+            background-color:#B5C9D0 !important;
+        }
         </style>
 </head>
 <body>
     
-    <nav class="navbar static-top navbar-light bg-light " style="background-color:#B5C9D0;">
+    <nav class="navbar static-top navbar-light bg-light navbar-custom " style=" background-color:#B5C9D0;">
         <div class = "container-fluid">
         <div class = "navbar-header">
         <a class="navbar-brand color-me " href="#"><b>Everyday</b></a>
         </div>
 
         <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="#" id="button"><button type="button" class="btn btn-light"><span class="glyphicon glyphicon-log-in"></span>Log In</button></a></li>
+            <li class="active"><a href="#" id="button"><button type="button" class="btn btn-dark"><span class="glyphicon glyphicon-log-in"></span>Log In</button></a></li>
         </ul>    
     </div>
 </nav>
@@ -98,7 +102,7 @@
     </div>
   </div>
 <div class = "sign-up-button text-center">
-  <button type="button" class="btn btn-primary btn-lg"><a href="newAccount.html">GET STARTED</a></button>
+    <a href="newAccount.html"><button type="button" class="btn btn-dark btn-lg">GET STARTED</button></a>
 
   <div class="bg-modal">
 <div class="modal-content">
@@ -106,13 +110,13 @@
 
 <div class="close">+</div>
 
-    <img src="profilePicWithBg.png" alt="coming soon">
+    <img src="profilePicWithBg.png" class="mx-auto d-block"alt="coming soon">
     <div class = "container-fluid forms" >
     <form action="/action_page.php">
 
         <div class ="form-group">
         <div class="input-group">
-          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <span class="oi oi-person"></span>
           <input type="text"class="form-control input-lg" id="uname" placeholder="Please Enter username" name="uname">
         </div>
         </div>
