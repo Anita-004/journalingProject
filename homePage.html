@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>everyday</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <style>
+ 
+        .homePageElements{
+            display: flex;
+            align-items:stretch;
+            align-content: space-between;
+            width: 95%;
+            justify-content: space-evenly;
+        }
+        .first-column{
+            flex:1.5;
+            order:1;
+        }
+        .second-column{
+            flex:5;
+            order:2;
+            display:flex;
+            flex-direction: column;
+        }
+
+        .third-column{
+            flex: 2.5;
+            order:3;
+            display:flex;
+            flex-direction: column;
+        }
+        ol{
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="card mb-3">
+            <div class="card-body">
+                Welcome Ebere 
+            </div>
+        </div>
+
+        <div class="homePageElements d-flex justify-content-between">
+
+
+            <div class="first-column all-columns">
+                <div class="card">
+                    <div class="card-header">
+                        Profile
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">My day</li>
+                            <li class="list-group-item">Calender</li>
+                            <li class="list-group-item">Gratitude</li>
+                            <li class="list-group-item">Stats</li>
+                        </ul>
+                </div>
+            </div>
+
+
+            <div class="second-column all">
+                <div class="card">
+                    <div class="card-body">
+                        <b>MONDAY</b>
+                    </div>
+                    <div class="card text-white bg-danger" >
+                        <div class="card-body">
+                            <h5 class="card-title">10</h5>
+                            <p class="card-text">March, 2020</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        Hover over the items in list to know what they do
+                    </div>
+                </div>
+            </div>
+ 
+
+            <div class="third-column">
+                <div class="card border-danger">
+                    <div class="card-header bg-transparent border-danger">
+                        Rate your day
+                    </div>
+                    <div class="card-body text-danger mb-3">
+                        <h5 class="card-title">How has today been?</h5>
+                        <p class="card-text">HERE IS FOR RANGE SLIDER</p>
+                    </div>
+                </div>
+              
+                <div class="card text-white bg-danger">
+                    <div class="card-header">
+                        Reminders
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Remember these things that you planned for today!
+                        </h5>
+                        <p class="card-text">                        
+                            <ol class="list-group list-group-flush" style>
+                            <li class="list-group-item">Do assignment</li>
+                            <li class="list-group-item">Go shopping</li>
+                            <li class="list-group-item">Hair care day :)</li>
+                        </ol></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+
+
+
+
+
+
+</html>
