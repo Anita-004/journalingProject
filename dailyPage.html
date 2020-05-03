@@ -1,30 +1,165 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>lists</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>everyday</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<style>
+    .navbar-custom{
+    background-color:#DF4957 !important;
+    }
+    body{
+            background: #343A40;
+        }
+    .all-the-children{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        background: #343A40;
+    }
+    .list-group{
+        flex:0 0 30%;
+    }
+    .writing-area{
+        flex:0 0 65%;
+        border-left: 5px solid #DF4957 !important;;
+        height: 530px;
+    }
+    #contentForm{
+    display:none;
+    }
+    .textAreaFill{
+    width: 100%;
+    height:100%;
+    }
+    .fill{
+        height: 100%;
+        width: 100%
+    }
+    .addContentButton{
+        text-align: center;margin-top: 12.5% !important;
+    }
 
+</style>
 </head>
 <body>
-<div id = contair-fluid>
-<h1>Everyday</h1>
-<div id = "write">
-    <div>
-    <div>
-    <label for="journalHeading">Today's heading</label>
-    <input type="text" id="journalHeading"> 
+
+
+    <nav class="navbar static-top navbar-light bg-light navbar-custom ">
+        <div class = "container-fluid">
+            <div class = "navbar-header">
+                <a class="navbar-brand color-me " style="color: black;" href="#"><b>Everyday</b></a>
+            </div>
+        
+        </div>
+    </nav>
+
+    <div class= "container-fluid mt-3">
+<div class= "all-the-children">
+ 
+    <div class="list-group" id="dynamicList">
+
+        <a href="#" id= "dynamicListItem" class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1" id="dynamicListHeading"></h5>
+                <small class="text-muted" id = "dynamicListContentDate"></small>
+          </div>
+          <p class="mb-1" id="dynamicListContent"></p>
+          <small id="lastEditedDate"class="text-muted"></small>
+        </a>
     </div>
 
-    <div>
-    <label for="aboutTodya">About Today</label>
-    <textarea id="aboutToday" class="form-control" row="100">
-    </textarea>
+    <div class="vl"></div>
+        <div  class= "writing-area">
+            <div class= "addContentButton" id="addContentButton">
+            <button type="button" class="btn btn-light" id="showContentForm" onclick="showContentForm()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 1 14 14" width="65%%" height="50%"><path fill-rule="evenodd" d="M13 1H1c-.55 0-1 .45-1 1v12c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V2c0-.55-.45-1-1-1zm0 13H1V2h12v12zM6 9H3V7h3V4h2v3h3v2H8v3H6V9z"></path></svg></button>
+            <br><small style="color: #DF4957;">click this button to write about your day</small>
+            </div>
+            <form id="contentForm">
+            <h1>Everyday</h1>
+            <div class="input-group">
+                <label for="journalHeading">Today's heading</label>
+                <input type="text" class= "form-control" id="journalHeading"> 
+            </div>
+                <label for="contentDate">What day are you writing about?</label>
+                <input type="date" id="contentDate" name="contentDate">
+
+
+            <div>
+                <label for="journalContent">About Today</label>
+            <div class= "textAreaFill">
+                <textarea id="journalContent" class="form-control fill" >
+                </textarea>
+            </div>
+            </div>
+            
+            <div class="input-group-append">
+                <div>
+                    <button id="savingbutton" onclick="addHeading(); addContent(); lastEdited(); addContentDate();removeItem();resetForm()" class="btn btn-add" type="button"> Save </button>
+                </div>
+
+                <div>
+                    <button id="deleteBtn" onclick="removeItem(); resetForm()"class="btn btn-remove" type="button"> Delete </button>
+                </div>
+            </div>
+        </div>
+    </form>
     </div>
-    
-    <div>
-    <button id="saveBtn" type= "submit"> Save </button>
-    </div>
-    
 </div>
+
+
+<script>
+    function addHeading(){
+        var div = document.getElementById("dynamicListHeading");
+        var journalHeading = document.getElementById("journalHeading");
+        var h5 = document.createElement("h5");
+        h5.setAttribute('id', journalHeading.value);
+        h5.appendChild (document.createTextNode(journalHeading.value));
+        div.appendChild(h5);
+    }
+ 
+    function addContent(){
+        var div = document.getElementById("dynamicListContent");
+        var journalContent = document.getElementById("journalContent");
+        var p = document.createElement("p");
+        p.setAttribute('id', journalContent.value);
+        p.appendChild (document.createTextNode(journalContent.value));
+        div.appendChild(p);
+    }
+ 
+    function lastEdited(){
+        var div = document.getElementById("lastEditedDate");
+        var date = new Date();
+        var n = date.toDateString();
+        var lastEditedDate = date.toLocaleTimeString();
+        var journalContent = document.getElementById('lastEditedDate').innerHTML= 'Last edited:' + ' '+ n + ' ' + lastEditedDate;
+        
+    }
+    function addContentDate(){
+        var div = document.getElementById("dynamicListContentDate");
+        var contentDate = document.getElementById("contentDate");
+        var small = document.createElement("small");
+        small.setAttribute('id', contentDate.value);
+        small.appendChild (document.createTextNode(contentDate.value));
+        div.appendChild(small);
+    }
+    function showContentForm(){
+        document.getElementById("contentForm").style.display = "block";
+        document.getElementById("addContentButton").style.display = "none";
+    }
+        
+    function removeItem(){
+        document.getElementById("contentForm").style.display = "none";
+        document.getElementById("addContentButton").style.display = "block";
+    }
+    function resetForm(){
+    document.getElementById('contentForm').reset();
+    }
+
+</script>
 </body>
 </html>
