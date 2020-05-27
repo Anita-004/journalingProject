@@ -8,35 +8,38 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="manifest" href="manifest.json">
     <style>
-        html  {
-          background-image: url("bg.jpg");
-          background-repeat: no-repeat;
-          background-size: cover;
-        }
+
         body{
-            background: rgba(255, 255, 255, .90);
+            background-image: radial-gradient(circle, #F0E3ED , #cfd7ed, #F0E3ED);
+            background-size:auto;
             width: 100%;
             height: 100%;
             margin: 0;
             padding: 0;
         }
+
+        .vertical-center {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            }
         .jumbotron{
             background:transparent;
-            color:#7E8191 ;
+            color:#123764 ;
             font-weight: bold;
-            margin-top: 5px;
+            text-align: center;
         }
         .color-me {
-            color:black;
+            color:#F0E3ED !important;
         }
-        .sign-up-button{
-            margin-bottom: 30px;
-        }
-        .btn.btn-primary.btn-lg {
+        .btn-lg {
         padding: 10px 20px;
-        font-size: 20px;
-        border-radius: 10px;
+        font-size: 2.3rem;
+        border-radius: 50px;
         }
         .bg-modal{
             width: 100%;
@@ -80,11 +83,13 @@
         }
 
         .navbar-custom{
-            background-color:#DF4957 !important;
+            background-color:#123764 !important;
         }
-        .btn.btn-dark.btn-lg{
-            margin-bottom: 100px;
+        .logging-button{
+            background-color: #F0E3ED !important ;
+            color: #123764;
         }
+
         </style>
 </head>
 <body>
@@ -96,20 +101,20 @@
             </div>
 
             <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="#" id="button"><button type="button" class="btn btn-dark">Log In</button></a></li>
+                <li class="active"><a href="#" id="button"><button type="button" class="btn btn-dark logging-button">Log In</button></a></li>
             </ul>    
         </div>
     </nav>
 
-    <div class = "text-center" >
+    <div class = "text-center vertical-center" >
         <div class="jumbotron text-center ">
             <h1>Write about your day, Plan and Set Reminders all in One place !</h1>
         </div>
-    </div>
+
     <div class = "sign-up-button text-center">
         <a href="newAccount.html"><button type="button" class="btn btn-dark btn-lg">GET STARTED</button></a>
     </div>
-
+</div>
     <div class="bg-modal">
         <div class="modal-content">
             <div class="close">+</div>
